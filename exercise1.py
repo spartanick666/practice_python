@@ -7,6 +7,6 @@ current_year = int(input("Please tell me the current year: "))
 
 future_year = int((100 - age) + current_year)
 
-print("In 100 years, the current year will be", future_year)
+print("When you are 100 years old, the current year will be", future_year)
 
 
