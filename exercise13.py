@@ -7,7 +7,7 @@
 fib_num = int(input("How many Fibonnaci numbers should I generate? Please enter a number: "))
 fib_list = []
 
-for i in range(0, fib_num + 1):
+for i in range(1, fib_num + 1):
     fib_list.append(i)
 #print(fib_list)
 
