@@ -1,3 +1,4 @@
+
 def get_number():
     return int(input("Please enter a number: "))
 
