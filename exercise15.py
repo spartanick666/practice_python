@@ -4,5 +4,9 @@
 def string():
     return (input("Please input a string: "))
 
-result = string().split()
+def split_string():
+    return string().split()
+
+for x in reversed(split_string()):
+    print(x)
 
