@@ -5,10 +5,10 @@
 #The sequence looks like this: 1, 1, 2, 3, 5, 8, 13)
 
 fib_num = int(input("How many Fibonnaci numbers should I generate? Please enter a number: "))
-fib_list = []
+#fib_list = []
 
-for i in range(1, fib_num + 1):
-    fib_list.append(i)
+#for i in range(1, fib_num + 1):
+ #   fib_list.append(i)
 #print(fib_list)
 
 def fib(n):
@@ -19,5 +19,5 @@ def fib(n):
    else:
     return fib(n-1) + fib(n-2)
 
-for x in fib_list:
+for x in range(1, fib_num + 1):
     print(fib(x))
