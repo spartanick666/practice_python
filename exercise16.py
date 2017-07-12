@@ -1,5 +1,8 @@
 import random
 
+def ask_question():
+    return input("Hello, would you like to generate a random password? please select yes or no: ").lower()
+
 def random_num():
     return random.randint(0, 100).__str__()
 
@@ -17,11 +20,11 @@ pwd_list = [random_num(), random_sym(), random_cap(), random_num(), random_low()
 def random_pwd():
     return ''.join(pwd_list)
 
-user_input = input("Hello, would you like to generate a random password? please select yes or no: ").lower()
-
-if user_input == "yes":
-    print(random_pwd())
-elif user_input == "no":
-    print("Don't you want a password?")
-else:
-    print("Sorry I don't understand")
+if __name__ == '__main__':
+    user_input = ask_question()
+    if user_input == "yes":
+        print(random_pwd())
+    elif user_input == "no":
+        print("Don't you want a password?")
+    else:
+        print("Sorry I don't understand")
