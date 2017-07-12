@@ -1,7 +1,7 @@
 import random
 
 def ask_question():
-    return input("Hello, would you like to generate a random password? please select yes or no: ").lower()
+    return input("Hello, would you like to generate a strong random password? please select yes or no: ").lower()
 
 def random_num():
     return random.randint(0, 100).__str__()
@@ -15,6 +15,10 @@ def random_cap():
 def random_sym():
     return random.choice('~!@#$%^&*()_+[];,./{}:"<>?')
 
+def weak_pwd():
+    weak_list = ['love', '12345', 'password', 'guest', 'qwerty', 'root']
+    return ("Here is your weak password: " + random.choice(weak_list))
+
 pwd_list = [random_num(), random_sym(), random_cap(), random_num(), random_low(), random_sym()]
 
 def random_pwd():
@@ -25,6 +29,6 @@ if __name__ == '__main__':
     if user_input == "yes":
         print(random_pwd())
     elif user_input == "no":
-        print("Don't you want a password?")
+        print(weak_pwd())
     else:
         print("Sorry I don't understand")
