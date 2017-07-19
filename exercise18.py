@@ -2,15 +2,13 @@
 # on the New York Times homepage.
 
 import requests
-from bs4 import BeautifulSoup
 
 url = 'https://www.nytimes.com/'
 r = requests.get(url)
 r_html = r.text
 
+from bs4 import BeautifulSoup
 soup = BeautifulSoup(r_html, 'html.parser')
 
-headings = soup("class=story-heading")
-
-print(headings)
+print(soup(class_="story-heading"))
 
