@@ -10,7 +10,15 @@ r_html = r.text
 
 soup = BeautifulSoup(r_html, 'html.parser')
 
-headings = soup("class=story-heading")
+headings = soup.find_all(class_="story-heading")
 
-print(headings)
+for i in headings:
+    print(i.get_text().strip())
 
+
+list = []
+
+for i in headings:
+    list.append(i.get_text().strip())
+
+print("\nThe number of article titles on nytimes.com is: " , len(list))
