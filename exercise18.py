@@ -6,17 +6,35 @@
 
 import random
 
-rand_num = str(random.randint(1000, 9999))
+def compare_nums(rand_num, user_num):
+    cowbulls = [0, 0]
+    for i in range(len(user_num)):
+        if user_num[i] == rand_num[i]:
+            cowbulls[0]+=1
+        else:
+            cowbulls[1]+=1
+    return cowbulls
 
-rand_list = []
+playgame = True
+rand_num = str(random.randint(0000,9999))
+print(rand_num)
 
-for x in rand_num:
-    rand_list.append(x)
-print(rand_list)
+print("Let's play a game of Cowbull!") #explanation
+print("I will generate a number, and you have to guess the numbers one digit at a time.")
+print("For every number in the wrong place, you get a cow. For every one in the right place, you get a bull.")
+print("The game ends when you get 4 bulls!")
+print("Type exit at any prompt to exit.")
 
-number = input("Welcome to the Cows and Bulls game, Please enter in a 4 digit number: ")
+while playgame:
+    user_num = input("Please select a 4 digit number: ")
+    cbcount = compare_nums(rand_num, user_num)
 
-num_list = []
-for x in number:
-    num_list.append(x)
-print(num_list)
+    print("You have " + str(cbcount[0]) + " cows, and " + str(cbcount[1]) + " bulls.")
+
+    if cbcount[0] == 4:
+        print("Congrats, you got the correct number " + rand_num)
+        break
+
+    else:
+        print("I didn't quite get that. Please select a 4 digit number again")
+
